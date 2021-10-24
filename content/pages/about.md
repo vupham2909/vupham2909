@@ -1,6 +1,6 @@
 ---
 title: About Me
-subtitle: This is a short page about me and my work
+subtitle: Hello world
 img_path: images/about.jpg
 seo:
   title: About Me
