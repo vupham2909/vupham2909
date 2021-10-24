@@ -30,7 +30,7 @@
             },
             {
                 "label": "Timeline",
-                "url": "#",
+                "url": "https://timeline.tautitan.com",
                 "style": "link",
                 "icon_class": "dev",
                 "new_window": false,
