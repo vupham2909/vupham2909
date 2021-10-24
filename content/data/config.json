@@ -37,7 +37,7 @@
                 "no_follow": false
             },
             {
-                "label": "https://blog.tautitan.com/",
+                "label": "Blog",
                 "url": "https://blog.tautitan.com/",
                 "style": "link",
                 "icon_class": "dev",
