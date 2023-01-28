@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * Configure your Gatsby site with this file.
  *
@@ -9,15 +10,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Vu Pham`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Vu Pham`,
+      summary: `an indie hacker who is passionate about software and reading books as a hobby. Constantly experimenting and learning in his free time.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Welcome to my personal website, where I share my passion for software development, projects, thoughts and book reviews. My website is a place for me to document my journey, share my learnings, and connect with like-minded people who share the same interests. I update my website regularly with new projects, thoughts and book reviews that I find inspiring. I hope you enjoy exploring my website and find something that resonates with you.`,
+    siteUrl: `https://vupham.me/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `vupham2909`,
     },
   },
   plugins: [
@@ -27,6 +28,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/project`,
+        name: `project`,
       },
     },
     {
@@ -75,14 +83,14 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({query: {site, allMarkdownRemark}}) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{'content:encoded': node.html}],
                 })
               })
             },
@@ -101,8 +109,8 @@ module.exports = {
                 }
               }
             }`,
-            output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            output: '/rss.xml',
+            title: 'Gatsby Starter Blog RSS Feed',
           },
         ],
       },
@@ -122,4 +130,5 @@ module.exports = {
       },
     },
   ],
+  pathPrefix: '/blog',
 }
