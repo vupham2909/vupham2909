@@ -18,7 +18,7 @@ const MainNavBar = () => {
           </Link>
         </li>
         <li className={navLinkItem}>
-          <Link to="/blog" className={navLinkText}>
+          <Link to="/project" className={navLinkText}>
             Blog
           </Link>
         </li>
