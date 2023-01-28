@@ -1,4 +1,10 @@
 {
+  "extends": ["plugin:prettier/recommended"],
   "arrowParens": "avoid",
-  "semi": false
+  "semi": false,
+  "bracketSpacing": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "all",
+  "singleQuote": true
 }

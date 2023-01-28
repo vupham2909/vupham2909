@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 // Step 2: Define your component
 const Footer = () => {
