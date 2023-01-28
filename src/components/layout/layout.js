@@ -8,21 +8,24 @@ import {
 } from './layout.module.css'
 import Footer from '../footer/footer'
 import PropTypes from 'prop-types'
+import useSiteMetadata from '../../hooks/siteMetadata'
 
-const Layout = ({location, title, children}) => {
+const Layout = ({location, children}) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+
+  const siteMetadata = useSiteMetadata()
 
   return (
     <div className={globalWrapper} data-is-root-path={isRootPath}>
       <header className={globalHeader}>
         {isRootPath ? (
           <h1 className={mainHeading}>
-            <Link to="/">{title}</Link>
+            <Link to="/">{siteMetadata.title}</Link>
           </h1>
         ) : (
           <Link className={headerLinkHome} to="/">
-            {title}
+            {siteMetadata.title}
           </Link>
         )}
       </header>
@@ -37,7 +40,6 @@ Layout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
-  title: PropTypes.string.isRequired,
 }
 
 export default Layout

@@ -7,9 +7,8 @@ import PropTypes from 'prop-types'
 
 // Step 2: Define your component
 const AboutPage = ({location}) => {
-  const siteTitle = `Gatsby Starter Blog`
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <h1>About Me</h1>
       <Link to="/">Back to home</Link>
       <p>
@@ -26,7 +25,7 @@ AboutPage.propTypes = {
   }).isRequired,
 }
 
-export const Head = () => <Seo title="About Me" />
+export const Head = () => <Seo title="About Me" description="About Vu Pham" />
 
 // Step 3: Export your component
 export default AboutPage

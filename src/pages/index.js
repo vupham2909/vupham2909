@@ -5,6 +5,7 @@ import {Link, graphql} from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout/layout'
 import Seo from '../components/seo'
+import MainNavBar from '../components/main-nav-bar/main-nav-bar'
 
 const BlogIndex = ({data, location}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -24,9 +25,10 @@ const BlogIndex = ({data, location}) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <Bio />
-      <Link to="/about">About me</Link>
+      <MainNavBar></MainNavBar>
+
       <ol style={{listStyle: `none`}}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -66,10 +68,7 @@ const BlogIndex = ({data, location}) => {
 BlogIndex.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.shape({
-        length: PropTypes.number,
-        map: PropTypes.func,
-      }),
+      nodes: PropTypes.array,
     }),
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
@@ -84,7 +83,9 @@ BlogIndex.propTypes = {
 
 export default BlogIndex
 
-export const Head = () => <Seo title="Home Page" />
+export const Head = () => (
+  <Seo title="Home Page" description="Welcome to Vu Pham website" />
+)
 
 export const pageQuery = graphql`
   {
