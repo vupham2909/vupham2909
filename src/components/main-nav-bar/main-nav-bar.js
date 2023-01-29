@@ -18,8 +18,8 @@ const MainNavBar = () => {
           </Link>
         </li>
         <li className={navLinkItem}>
-          <Link to="/blog" className={navLinkText}>
-            Blog
+          <Link to="/project" className={navLinkText}>
+            Project
           </Link>
         </li>
       </ul>

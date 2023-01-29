@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import * as React from 'react'
 import {Link, graphql} from 'gatsby'
 
@@ -63,22 +62,6 @@ const BlogIndex = ({data, location}) => {
       </ol>
     </Layout>
   )
-}
-
-BlogIndex.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.array,
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.any,
-      }),
-    }),
-  }),
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
 }
 
 export default BlogIndex
