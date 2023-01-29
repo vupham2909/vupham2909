@@ -19,7 +19,7 @@ const MainNavBar = () => {
         </li>
         <li className={navLinkItem}>
           <Link to="/project" className={navLinkText}>
-            Blog
+            Project
           </Link>
         </li>
       </ul>

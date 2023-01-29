@@ -1,15 +1,16 @@
 import * as React from 'react'
-import Layout from '../components/layout/layout'
-import Seo from '../components/seo'
-import PropTypes from 'prop-types'
-import {graphql} from 'gatsby'
+import Layout from '../../components/layout/layout'
+import Seo from '../../components/seo'
+import {Link, graphql} from 'gatsby'
 
 const ProjectPage = ({location, data}) => {
   return (
     <Layout location={location}>
       {data.allMdx.nodes.map(node => (
         <article key={node.id}>
-          <h2>{node.frontmatter.title}</h2>
+          <Link to={node.frontmatter.slug} itemProp="url">
+            <span itemProp="headline">{node.frontmatter.title}</span>
+          </Link>
           <p>
             Posted: {node.frontmatter.date} | Last updated:{' '}
             {node.parent.modifiedTime}
@@ -21,23 +22,13 @@ const ProjectPage = ({location, data}) => {
   )
 }
 
-ProjectPage.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      nodes: PropTypes.array,
-    }),
-  }),
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-}
-
 export const query = graphql`
   query {
     allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
+          slug
           title
         }
         parent {

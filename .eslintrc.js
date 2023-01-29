@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     semi: ['error', 'never'],
     'linebreak-style': 0,
+    'react/prop-types': 0,
   },
   globals: {
     __PATH_PREFIX__: true,

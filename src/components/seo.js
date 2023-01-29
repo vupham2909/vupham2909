@@ -5,7 +5,6 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import PropTypes from 'prop-types'
 import * as React from 'react'
 import useSiteMetadata from '../hooks/siteMetadata'
 
@@ -30,12 +29,6 @@ const Seo = ({description, title, children}) => {
       {children}
     </>
   )
-}
-
-Seo.propTypes = {
-  children: PropTypes.any,
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 }
 
 export default Seo
