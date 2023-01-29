@@ -10,6 +10,7 @@ module.exports = {
     'prettier',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:mdx/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -18,11 +19,17 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
     semi: ['error', 'never'],
     'linebreak-style': 0,
     'react/prop-types': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
   globals: {
     __PATH_PREFIX__: true,
