@@ -4,21 +4,24 @@ import Seo from '../../components/seo'
 import {graphql} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
-const BlogPost = ({location, data, children}) => {
+const ProjectPost = ({data, children}) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
-    <Layout location={location}>
-      <h1>{data.mdx.frontmatter.title}</h1>
-      <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
-      <p>
-        Photo Credit:{' '}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      {children}
+    <Layout>
+      <h1>Project Post</h1>
+      <div className="prose lg:prose-xl">
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <p>{data.mdx.frontmatter.date}</p>
+        <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+        <p>
+          Photo Credit:{' '}
+          <a href={data.mdx.frontmatter.hero_image_credit_link}>
+            {data.mdx.frontmatter.hero_image_credit_text}
+          </a>
+        </p>
+        {children}
+      </div>
     </Layout>
   )
 }
@@ -48,4 +51,4 @@ export const query = graphql`
   }
 `
 
-export default BlogPost
+export default ProjectPost

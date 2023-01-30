@@ -11,6 +11,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:mdx/recommended',
+    'plugin:tailwindcss/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +20,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'tailwindcss'],
   rules: {
     semi: ['error', 'never'],
     'linebreak-style': 0,

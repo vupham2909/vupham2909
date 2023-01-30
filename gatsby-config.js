@@ -13,7 +13,7 @@ module.exports = {
     title: `Vu Pham`,
     author: {
       name: `Vu Pham`,
-      summary: `an indie hacker who is passionate about software and reading books as a hobby. Constantly experimenting and learning in his free time.`,
+      summary: `An indie hacker who is passionate about software and reading books as a hobby. Constantly experimenting and learning in his free time.`,
     },
     description: `Welcome to my personal website, where I share my passion for software development, projects, thoughts and book reviews. My website is a place for me to document my journey, share my learnings, and connect with like-minded people who share the same interests. I update my website regularly with new projects, thoughts and book reviews that I find inspiring. I hope you enjoy exploring my website and find something that resonates with you.`,
     siteUrl: `https://vupham.me/`,
@@ -24,18 +24,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     'gatsby-plugin-mdx',
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/project`,
-        name: `project`,
+        path: `${__dirname}/content/`,
+        name: `content`,
       },
     },
     {
@@ -128,6 +122,13 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+        'data-theme': 'night',
       },
     },
   ],

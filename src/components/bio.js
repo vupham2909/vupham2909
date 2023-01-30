@@ -13,25 +13,22 @@ const Bio = () => {
   const data = useSiteMetadata()
 
   const author = data?.author
-  const social = data?.social
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={['auto', 'webp', 'avif']}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
+    <div>
+      <div className="avatar">
+        <div className="w-24 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
+          <StaticImage
+            formats={['auto', 'webp', 'avif']}
+            src="../images/profile-pic.png"
+            quality={95}
+            alt="Profile picture"
+          />
+        </div>
+      </div>
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
         </p>
       )}
     </div>

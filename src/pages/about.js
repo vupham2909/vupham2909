@@ -5,9 +5,9 @@ import Layout from '../components/layout/layout'
 import Seo from '../components/seo'
 
 // Step 2: Define your component
-const AboutPage = ({location}) => {
+const AboutPage = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <h1>About Me</h1>
       <Link to="/">Back to home</Link>
       <p>
