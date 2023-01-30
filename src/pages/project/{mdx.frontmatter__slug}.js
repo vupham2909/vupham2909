@@ -9,16 +9,18 @@ const BlogPost = ({location, data, children}) => {
 
   return (
     <Layout location={location}>
-      <h1>{data.mdx.frontmatter.title}</h1>
-      <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
-      <p>
-        Photo Credit:{' '}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      {children}
+      <div className="prose lg:prose-xl">
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <p>{data.mdx.frontmatter.date}</p>
+        <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+        <p>
+          Photo Credit:{' '}
+          <a href={data.mdx.frontmatter.hero_image_credit_link}>
+            {data.mdx.frontmatter.hero_image_credit_text}
+          </a>
+        </p>
+        {children}
+      </div>
     </Layout>
   )
 }

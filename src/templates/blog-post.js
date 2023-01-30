@@ -14,7 +14,7 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location} title={siteTitle}>
       <article
-        className="blog-post"
+        className="prose md:prose-lg lg:prose-xl"
         itemScope
         itemType="http://schema.org/Article"
       >

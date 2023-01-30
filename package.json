@@ -10,9 +10,13 @@
   "dependencies": {
     "@fontsource/merriweather": "^4.5.14",
     "@fontsource/montserrat": "^4.5.14",
+    "@headlessui/react": "^1.7.8",
+    "@heroicons/react": "^2.0.14",
     "@mdx-js/react": "^2.2.1",
+    "daisyui": "^2.49.0",
     "gatsby": "^5.4.2",
     "gatsby-plugin-feed": "^5.4.0",
+    "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^3.4.0",
     "gatsby-plugin-manifest": "^5.4.0",
     "gatsby-plugin-mdx": "^5.5.0",
@@ -25,9 +29,12 @@
     "gatsby-transformer-sharp": "^5.4.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "theme-change": "^2.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.6.0",
@@ -35,8 +42,13 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.8.2",
+    "gatsby-plugin-postcss": "^6.5.0",
+    "postcss": "^8.4.21",
     "prettier": "^2.8.3",
-    "remark-preset-prettier": "^2.0.1"
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "remark-preset-prettier": "^2.0.1",
+    "tailwindcss": "^3.2.4"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
