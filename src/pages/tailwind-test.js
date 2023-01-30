@@ -3,9 +3,9 @@ import * as React from 'react'
 import Layout from '../components/layout/layout'
 import Seo from '../components/seo'
 
-const TailwindPage = ({location}) => {
+const TailwindPage = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <button className="btn">Button</button>
       <button className="btn-primary btn">Button</button>
       <button className="btn w-64 rounded-full">Button</button>

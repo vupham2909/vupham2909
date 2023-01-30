@@ -3,18 +3,15 @@ import Layout from '../../components/layout/layout'
 import Seo from '../../components/seo'
 import {Link, graphql} from 'gatsby'
 
-const ProjectPage = ({location, data}) => {
+const ProjectPage = ({data}) => {
   return (
-    <Layout location={location}>
+    <Layout>
       {data.allMdx.nodes.map(node => (
         <article key={node.id}>
           <Link to={node.frontmatter.slug} itemProp="url">
             <span itemProp="headline">{node.frontmatter.title}</span>
           </Link>
-          <p>
-            Posted: {node.frontmatter.date} | Last updated:{' '}
-            {node.parent.modifiedTime}
-          </p>
+          <p>Posted: {node.frontmatter.date}</p>
           <p>{node.excerpt}</p>
         </article>
       ))}
@@ -23,21 +20,26 @@ const ProjectPage = ({location, data}) => {
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+  query MyQuery {
+    allMdx(filter: {frontmatter: {category: {eq: "project"}}}) {
       nodes {
+        excerpt
+        id
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
+          category
+          date
+          description
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          hero_image_alt
+          hero_image_credit_link
+          hero_image_credit_text
           slug
           title
         }
-        parent {
-          ... on File {
-            modifiedTime(formatString: "MMMM D, YYYY")
-          }
-        }
-        id
-        excerpt
       }
     }
   }
