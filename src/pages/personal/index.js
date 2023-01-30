@@ -21,7 +21,10 @@ const PersonalBlogPage = ({data}) => {
 
 export const query = graphql`
   query MyQuery {
-    allMdx(filter: {frontmatter: {category: {eq: "personal"}}}) {
+    allMdx(
+      filter: {frontmatter: {category: {eq: "personal"}}}
+      sort: {frontmatter: {date: DESC}}
+    ) {
       nodes {
         excerpt
         id

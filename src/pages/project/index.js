@@ -21,7 +21,10 @@ const ProjectPage = ({data}) => {
 
 export const query = graphql`
   query MyQuery {
-    allMdx(filter: {frontmatter: {category: {eq: "project"}}}) {
+    allMdx(
+      filter: {frontmatter: {category: {eq: "project"}}}
+      sort: {frontmatter: {date: DESC}}
+    ) {
       nodes {
         excerpt
         id
