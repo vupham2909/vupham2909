@@ -15,7 +15,7 @@ module.exports = {
       name: `Vu Pham`,
       summary: `An indie hacker who is passionate about software and reading books as a hobby. Constantly experimenting and learning in his free time.`,
     },
-    description: `Welcome to my personal website, where I share my passion for software development, projects, thoughts and book reviews. My website is a place for me to document my journey, share my learnings, and connect with like-minded people who share the same interests. I update my website regularly with new projects, thoughts and book reviews that I find inspiring. I hope you enjoy exploring my website and find something that resonates with you.`,
+    description: `Step into my digital playground`,
     siteUrl: `https://vupham.me/`,
     social: {
       twitter: `vupham2909`,

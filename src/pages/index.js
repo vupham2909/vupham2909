@@ -3,11 +3,13 @@ import * as React from 'react'
 import BioHero from '../components/bio-hero'
 import Layout from '../components/layout/layout'
 import Seo from '../components/seo'
+import SocialLinks from '../components/social-links'
 
 const HomeIndex = ({data, location}) => {
   return (
     <Layout>
       <BioHero />
+      <SocialLinks />
     </Layout>
   )
 }
@@ -15,5 +17,5 @@ const HomeIndex = ({data, location}) => {
 export default HomeIndex
 
 export const Head = () => (
-  <Seo title="Home Page" description="Welcome to Vu Pham website" />
+  <Seo title="" description="Step into my digital playground" />
 )

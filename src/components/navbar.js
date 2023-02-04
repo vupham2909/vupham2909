@@ -1,27 +1,26 @@
 import * as React from 'react'
 import ThemeChanger from './theme-changer'
-import {Link} from 'gatsby'
-import useSiteMetadata from '../hooks/siteMetadata'
+// import {Link} from 'gatsby'
+// import useSiteMetadata from '../hooks/siteMetadata'
 
-// Step 2: Define your component
-const NavbarItemList = () => {
-  return (
-    <>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/personal">Personal</Link>
-      </li>
-      <li>
-        <Link to="/project">Project</Link>
-      </li>
-    </>
-  )
-}
+// const NavbarItemList = () => {
+//   return (
+//     <>
+//       <li>
+//         <Link to="/about">About</Link>
+//       </li>
+//       <li>
+//         <Link to="/personal">Personal</Link>
+//       </li>
+//       <li>
+//         <Link to="/project">Project</Link>
+//       </li>
+//     </>
+//   )
+// }
 
 const Navbar = () => {
-  const siteMetadata = useSiteMetadata()
+  // const siteMetadata = useSiteMetadata()
   return (
     <div
       className="
@@ -31,7 +30,7 @@ const Navbar = () => {
     >
       <nav className="navbar bg-base-100">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <label tabIndex={0} className="btn-ghost btn lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,16 +53,16 @@ const Navbar = () => {
             >
               <NavbarItemList></NavbarItemList>
             </ul>
-          </div>
-          <Link className="btn-ghost btn text-xl normal-case" to="/">
+          </div> */}
+          {/* <Link className="btn-ghost btn text-xl normal-case" to="/">
             {siteMetadata.title}
-          </Link>
+          </Link> */}
         </div>
-        <div className="navbar-center hidden lg:flex">
+        {/* <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavbarItemList></NavbarItemList>
           </ul>
-        </div>
+        </div> */}
         <div className="navbar-end">
           <ThemeChanger></ThemeChanger>
         </div>

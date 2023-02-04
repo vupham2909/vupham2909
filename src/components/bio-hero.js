@@ -9,32 +9,35 @@ import * as React from 'react'
 import useSiteMetadata from '../hooks/siteMetadata'
 import {StaticImage} from 'gatsby-plugin-image'
 
+const Avatar = () => {
+  return (
+    <div className="avatar flex flex-wrap items-center">
+      <div className="w-32 rounded-full shadow-2xl ring ring-primary ring-offset-2 ring-offset-base-100">
+        <StaticImage
+          formats={['auto', 'webp', 'avif']}
+          src="../images/profile-pic.png"
+          quality={95}
+          alt="Vu Pham profile picture"
+          width={128}
+          height={128}
+        />
+      </div>
+    </div>
+  )
+}
+
 const BioHero = () => {
   const data = useSiteMetadata()
 
   const author = data?.author
-
+  const description = data?.description
   return (
-    <div>
-      <div className="hero bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="avatar">
-            <div className="w-24 rounded-full shadow-2xl ring ring-primary ring-offset-2 ring-offset-base-100">
-              <StaticImage
-                formats={['auto', 'webp', 'avif']}
-                src="../images/profile-pic.png"
-                quality={95}
-                alt="Profile picture"
-              />
-            </div>
-          </div>
-          <div>
-            <h1 className="text-5xl font-bold">{author.name}</h1>
-            <p className="py-6">{author?.summary || null}</p>
-            {/* <button className="btn-primary btn">Get Started</button> */}
-          </div>
-        </div>
+    <div className="flex flex-col flex-wrap content-center items-center gap-4">
+      <div className="flex flex-col gap-1">
+        <h1 className="text-center text-3xl font-bold">{author.name}</h1>
+        <p className="text-center font-light">{description}</p>
       </div>
+      <Avatar></Avatar>
     </div>
   )
 }
